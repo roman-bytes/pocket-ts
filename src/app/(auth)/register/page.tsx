@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
+import { registerUser } from '@/app/actions/register'
 
 export const metadata: Metadata = {
   title: 'Sign Up',
@@ -23,7 +24,7 @@ export default function Register() {
         </>
       }
     >
-      <form>
+      <form action={registerUser}>
         <div className="grid grid-cols-2 gap-6">
           <TextField
             label="First name"
@@ -37,6 +38,14 @@ export default function Register() {
             name="last_name"
             type="text"
             autoComplete="family-name"
+            required
+          />
+          <TextField
+            className="col-span-full"
+            label="Username"
+            name="username"
+            type="text"
+            autoComplete="username"
             required
           />
           <TextField

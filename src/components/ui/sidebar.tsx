@@ -65,8 +65,8 @@ const SidebarLayout = React.forwardRef<
 SidebarLayout.displayName = "SidebarLayout"
 
 const SidebarTrigger = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<"button">
+    any,
+    any
 >(({ className, ...props }, ref) => {
   const { open, onOpenChange } = useSidebar()
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
+import { loginUser } from '@/app/actions/login'
 
 export const metadata: Metadata = {
   title: 'Sign In',
@@ -23,13 +24,13 @@ export default function Login() {
         </>
       }
     >
-      <form>
+      <form action={loginUser}>
         <div className="space-y-6">
           <TextField
-            label="Email address"
-            name="email"
-            type="email"
-            autoComplete="email"
+            label="Username"
+            name="username"
+            type="text"
+            autoComplete="username"
             required
           />
           <TextField
